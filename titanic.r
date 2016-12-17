@@ -18,5 +18,15 @@ countServived <- table(train$Survived)
 test$Servived <- rep(0)
 
 #store in CSV
-submit <- data.frame(PassengerId = test$PassengerId, Survived = test$Servived)
+submit <- data.frame(PassengerId = test$PassengerId, Survived = test$Survived)
 write.csv(submit, file = "everyoneDies.csv", row.names = FALSE)
+
+#sexs of the passengers
+table(train$Sex)
+
+#of total survivors by sex out of total P(survival)
+prop.table(table(train$Sex, train$Survived))
+
+#P(survival | gender)
+prop.table(table(train$Sex, train$Survived), 1)
+

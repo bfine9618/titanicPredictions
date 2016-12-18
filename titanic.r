@@ -12,10 +12,10 @@ str(train)
 table(train$Survived)
 
 #store variable (functional Language)
-countServived <- table(train$Survived)
+countSurvived <- table(train$Survived)
 
 #"everyone Died" scenario for test group
-test$Servived <- rep(0)
+test$Survived <- rep(0)
 
 #store in CSV
 submit <- data.frame(PassengerId = test$PassengerId, Survived = test$Survived)
@@ -30,3 +30,5 @@ prop.table(table(train$Sex, train$Survived))
 #P(survival | gender)
 prop.table(table(train$Sex, train$Survived), 1)
 
+#view statistical ranges for age
+summary(train$Age)
